@@ -4,15 +4,15 @@ DIR_BAK=~/.dotfiles_bak
 
 for file in ./files/!(.|..)
 do
-  if [ -f ~/`basename "$file"` ]
+  if [ -f ~/`basename "$file"` -o -d ~/`basename "$file"` ]
   then
-    if [ ! -d DIR_BAK ]; then
+    if [ ! -d $DIR_BAK ]; then
       echo "Creating backup dotfiles directory in $DIR_BAK"
-      #mkdir DIR_BAK
+      mkdir $DIR_BAK
     fi
-    mv ~/`basename "$file"` DIR_BAK
+    echo "Moving ~/`basename "$file"` to $DIR_BAK"
+    mv ~/`basename "$file"` $DIR_BAK
   fi
-  echo ~/`basename "$file"`
-  echo `realpath -s "$file"`
+  echo "Soft linking `realpath -s "$file"` to ~/"
   ln -s `realpath -s "$file"` ~/
 done
