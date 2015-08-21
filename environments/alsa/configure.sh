@@ -1,10 +1,9 @@
 #!/bin/bash
 
-conf_home () {
+configure () {
   local DIR_ROOT=$1
-  source $DIR_ROOT/tasks/lib.sh
 
-  local PATH_CONF=$DIR_ROOT/files/alsa/asound.conf
+  local PATH_CONF=$DIR_ROOT/asound.conf
   local PATH_TARGET=/etc/asound.conf
 
   sudo modprobe snd-aloop

@@ -10,6 +10,7 @@ URxvt.keysym.End: \033[4~
 URxvt.keysym.Home: \033[1~
 URxvt.perl-ext-common: font-size
 URxvt.scrollBar: false
+URxvt.saveLines: 6000
 
 XTerm*Background: #222222
 XTerm*Foreground: #EEEEEE
