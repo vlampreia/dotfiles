@@ -1,4 +1,4 @@
-source ~/dotfiles/antigen/antigen.zsh
+source ~/dotfiles/files/zsh/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -18,3 +18,6 @@ alias l="ls -lah"
 alias tree="tree -C"
 
 sh ~/dotfiles/scripts/base-16.default.dark.mod.sh
+
+bindkey "\e[1~" beginning-of-line
+bindkey "\e[4~" end-of-line
