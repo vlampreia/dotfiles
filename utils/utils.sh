@@ -14,6 +14,7 @@ link () {
     fi
   fi
   sudo ln -s $path_source $path_target
+  echo "linked $path_target to $path_source"
 }
 
 #makes for cleaner output
