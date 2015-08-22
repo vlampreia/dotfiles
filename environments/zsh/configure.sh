@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# ZSH setup
+
 configure () {
   local DIR_ROOT=$1
 
