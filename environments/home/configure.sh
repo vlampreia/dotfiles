@@ -6,12 +6,12 @@ shopt -s extglob
 configure () {
   local DIR_ROOT=$1
 
-  for file in $DIR_ROOT/.!(.|); do
-    PATH_CONF=`realpath $file`
-    FILE_NAME=`basename "$file"`
-    PATH_TARGET=$HOME/$FILE_NAME
+  git config --global core.editor vim
 
-    git config --global core.editor vim
+  local file
+  for file in $DIR_ROOT/.!(.|); do
+    local PATH_CONF=`realpath $file`
+    local PATH_TARGET=$HOME/`basename "$file"`
 
     link $PATH_CONF $PATH_TARGET
   done
