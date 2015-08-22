@@ -1,3 +1,6 @@
 [submodule "environments/zsh/antigen"]
 	path = environments/zsh/antigen
 	url = https://github.com/zsh-users/antigen.git
+[submodule "environments/vim/.vim/vim-plug"]
+	path = environments/vim/.vim/vim-plug
+	url = https://github.com/junegunn/vim-plug.git
