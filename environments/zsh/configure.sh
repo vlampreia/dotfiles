@@ -5,8 +5,11 @@
 configure () {
   local DIR_ROOT=$1
 
+  local CURRENTDIR=$(pwd)
+  cd $DIR_ROOT
   git submodule init
   git submodule update
+  cd $CURRENTDIR
 
   local FILES=".zsh*"
 

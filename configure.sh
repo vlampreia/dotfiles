@@ -13,10 +13,10 @@ for dir in $DIR_ROOT/environments/*; do
 done
 
 print_usage () {
-  echo "Usage: $0 <environment to configure>"
-  echo "Available environments:"
+  printf "Usage: $0 <environment to configure>\n"
+  printf "Available environments:\n"
   for env in "${ENVS[@]}"; do
-    echo $env
+    printf "$env\n"
   done
   exit 1
 }
@@ -25,10 +25,28 @@ if [ -z "$1" ]; then
   print_usage
 fi
 
+do_env () {
+  local $env=$1
 
-for env in $@; do
   (
+    printf "\nconfiguring $env environment\n"
     source $DIR_ROOT/environments/$env/configure.sh
     configure "$DIR_ROOT/environments/$env"
   )
+}
+
+for env in $@; do
+  if [ "$env" == "all" ]; then
+    for env in "${ENVS[@]}"; do
+      do_env $env
+    done
+  else
+    contains "${env}" "${ENVS[@]}"
+    if [ $? -ne 0 ]; then
+      printf "environemnt '$env' not found.\n"
+      print_usage
+    else
+      do_env $env
+    fi
+  fi
 done
