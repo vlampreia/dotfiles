@@ -12,6 +12,8 @@ configure () {
   git submodule update
   cd $CURRENTDIR
 
+  create_dir $DIR_ROOT/.vim/swapfiles
+
   local file
   for file in $DIR_ROOT/.!(.|); do
     local PATH_CONF=`realpath $file`
