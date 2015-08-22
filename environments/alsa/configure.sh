@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# ALSA setup
+
 configure () {
   local DIR_ROOT=$1
 

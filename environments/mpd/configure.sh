@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# MPD setup
+
 configure () {
   local DIR_ROOT=$1
 
