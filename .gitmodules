@@ -4,3 +4,6 @@
 [submodule "environments/vim/.vim/vim-plug"]
 	path = environments/vim/.vim/vim-plug
 	url = https://github.com/junegunn/vim-plug.git
+[submodule "environments/home/urxvt-font-size"]
+	path = environments/home/urxvt-font-size
+	url = https://github.com/majutsushi/urxvt-font-size.git

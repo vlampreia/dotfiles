@@ -16,4 +16,7 @@ configure () {
   touch $DIR_CONF/{database,log,pid,state,sticker.sql}
 
   link $PATH_CONF $PATH_TARGET
+
+  create_dir $HOME/.ncmpcpp
+  link $DIR_ROOT/.ncmpcpp/config $HOME/.ncmpcpp/config
 }

@@ -21,4 +21,6 @@ configure () {
 
     link $PATH_CONF $PATH_TARGET
   done
+
+  printf "don't forget to run :PlugInstall in vim!"
 }

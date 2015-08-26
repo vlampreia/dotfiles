@@ -1,3 +1,8 @@
+URxvt.perl-ext-common: font-size
+URxvt.keysym.Mod4-Home: font-size:increase
+URxvt.keysym.Mod4-End: font-size:decrease
+URxvt.font-size.step: 2
+
 URxvt.background: #222222
 URxvt.font: xft:DejaVu\ Sans\ Mono\ for\ Powerline:size=8
 URxvt.letterSpace: -1
@@ -8,7 +13,6 @@ URxvt.keysym.Control-Right: \033[1;5C
 URxvt.keysym.Control-Up: \033[1;5A
 URxvt.keysym.End: \033[4~
 URxvt.keysym.Home: \033[1~
-URxvt.perl-ext-common: font-size
 URxvt.scrollBar: false
 URxvt.saveLines: 6000
 
