@@ -27,6 +27,7 @@ syntax enable
 " syntax
 
 set nowrap
+set relativenumber
 set number
 set guifont=Monospace\ 8
 set guioptions-=r "remove right scroll bar
