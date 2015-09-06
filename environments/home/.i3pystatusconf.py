@@ -19,6 +19,8 @@ status.register("battery",
 status.register("network", interface="enp0s25", format_up="enp0s25 {v4cidr}",)
 status.register("network", interface="wlp3s0", format_up="wlp3s0 {v4cidr} {essid} {quality:03.0f}%",)
 
+status.register("alsa", card=2)
+
 status.register("mpd",
         format="{status} {title} \[{song_elapsed}\] {album}",
         status={

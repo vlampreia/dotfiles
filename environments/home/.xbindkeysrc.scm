@@ -5,3 +5,6 @@
 (xbindkey '(control alt Prior) "mpc prev")
 (xbindkey '(control alt End) "mpc toggle")
 (xbindkey '(control alt Home) "mpc stop")
+(xbindkey '(XF86AudioLowerVolume) "amixer -c 2 set Master 5dB-")
+(xbindkey '(XF86AudioRaiseVolume) "amixer -c 2 set Master 5dB+")
+(xbindkey '(XF86AudioMute) "amixer -c 2 set Master toggle")

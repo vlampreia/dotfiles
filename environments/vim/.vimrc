@@ -37,6 +37,8 @@ set guioptions-=m "remove menu bar
 set formatoptions+=r
 set guioptions-=e
 
+set colorcolumn=81
+
 set wildignore+=*.so,*.swp,*.zip,*.class,*.jar,node_modules
 
 set softtabstop=2
