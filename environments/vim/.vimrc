@@ -11,8 +11,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'tpope/vim-surround'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/_ycm_extra_conf.py'
+let g:ycm_auto_trigger = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_filepath_completion_use_working_dir = 1
 
 " set swp file dir
 set directory=$HOME/.vim/swapfiles//
