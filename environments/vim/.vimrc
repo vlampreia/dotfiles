@@ -12,6 +12,7 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'tpope/vim-surround'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Valloric/YouCompleteMe'
+Plug 'mkitt/tabline.vim'
 
 call plug#end()
 
@@ -43,16 +44,18 @@ set guioptions-=m "remove menu bar
 set formatoptions+=r
 set guioptions-=e
 
+set hlsearch
+
 set colorcolumn=81
 
 set wildignore+=*.so,*.swp,*.zip,*.class,*.jar,node_modules
 
+filetype plugin indent on
 set softtabstop=2
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set autoindent
-filetype plugin indent on
+"set autoindent
 
 let indent_guides_enable_on_vim_startup=1
 let indent_guides_color_change_percent=3
@@ -77,6 +80,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_exclude_preview = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 set hidden
 
 "tab shift
