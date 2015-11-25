@@ -102,3 +102,5 @@ set splitbelow
 set splitright
 
 hi Visual guibg=#303030 guifg=#FFFFFF gui=none
+
+map <F4> :nohl<CR>

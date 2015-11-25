@@ -49,7 +49,9 @@ flags = [
 '-isystem',
 '../BoostParts',
 '-I',
-'./include'
+'./include',
+'-I',
+'./external'
 ]
 
 
