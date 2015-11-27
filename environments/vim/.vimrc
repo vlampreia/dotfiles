@@ -48,7 +48,7 @@ set hlsearch
 
 set colorcolumn=81
 
-set wildignore+=*.so,*.swp,*.zip,*.class,*.jar,node_modules
+set wildignore+=*.o,*.so,*.swp,*.zip,*.class,*.jar,node_modules
 
 filetype plugin indent on
 set softtabstop=2
