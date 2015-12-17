@@ -31,7 +31,7 @@ status.register("battery",
             "FULL": "-",
         },)
 
-status.register("battery", format="⚡ {consumption:.2f}W")
+status.register("battery", format="⚡ {consumption:.2f}W ({remaining:%E %h:%M})")
 
 status.register("network", interface="enp0s25", format_up="enp0s25 {v4cidr}", format_down="enp0s25")
 status.register("network", interface="wlp3s0", format_up="wlp3s0 {v4cidr} {essid} {quality:03.0f}%", format_down="wlp3s0")
