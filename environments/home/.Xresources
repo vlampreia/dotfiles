@@ -36,3 +36,8 @@ urxvt.color6: #767D75
 urxvt.color7: #999999
 urxvt.color8: #4A585A
 urxvt.color9: #EF545F
+
+rofi.kb-row-left: Control+h
+rofi.kb-row-right: Control+l
+rofi.kb-row-down: Control+j
+rofi.kb-row-up: Control+k

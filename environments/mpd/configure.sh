@@ -19,4 +19,5 @@ configure () {
 
   create_dir $HOME/.ncmpcpp
   link $DIR_ROOT/.ncmpcpp/config $HOME/.ncmpcpp/config
+  link $DIR_ROOT/.ncmpcpp/bindings $HOME/.ncmpcpp/bindings
 }

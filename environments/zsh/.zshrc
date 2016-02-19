@@ -14,8 +14,12 @@ antigen apply
 
 DEFAULT_USER=victor
 
+export EDITOR=vim
+
 alias l="ls -lah"
 alias tree="tree -C"
+
+alias gits="git status"
 
 sh ~/dotfiles/scripts/base-16.default.dark.mod.sh
 
