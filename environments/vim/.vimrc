@@ -1,15 +1,11 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/neocomplete'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
-Plug 'szw/vim-ctrlspace'
-"Plug 'tpope/vim-fugitive'
-"Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
-"Plug 'tpope/vim-surround'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Valloric/YouCompleteMe'
 Plug 'mkitt/tabline.vim'
