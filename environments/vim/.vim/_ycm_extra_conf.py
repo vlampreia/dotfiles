@@ -31,29 +31,18 @@
 import os
 import ycm_core
 
-# These are the compilation flags that will be used in case there's no
-# compilation database set (by default, one is not set).
-# CHANGE THIS LIST OF FLAGS. YES, THIS IS THE DROID YOU HAVE BEEN LOOKING FOR.
 flags = [
-'-Wall',
-'-Wextra',
-'-Werror',
-#'-Wc++98-compat',
-'-Wno-long-long',
-'-Wno-variadic-macros',
-'-fexceptions',
-'-DNDEBUG',
-'-std=c++11',
-'-x',
-'c++',
-'-isystem',
-'../BoostParts',
-'-I',
-'./include',
-'-I',
-'./external'
-]
-
+    '-Wall',
+    '-Wextra',
+    '-Werror',
+    '-pedantic',
+    '-Wstrict-prototypes',
+    '-Wmissing-prototypes',
+    '-I',
+    './include',
+    '-I',
+    './external'
+    ]
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
 # compile_commands.json file to use that instead of 'flags'. See here for
@@ -130,30 +119,17 @@ def GetCompilationInfoForFile( filename ):
   return database.GetCompilationInfoForFile( filename )
 
 
-def FlagsForFile( filename, **kwargs ):
-  if database:
-    # Bear in mind that compilation_info.compiler_flags_ does NOT return a
-    # python list, but a "list-like" StringVec object
-    compilation_info = GetCompilationInfoForFile( filename )
-    if not compilation_info:
-      return None
+def FlagsForFile(filename, **kwargs):
+    global flags
 
-    final_flags = MakeRelativePathsInFlagsAbsolute(
-      compilation_info.compiler_flags_,
-      compilation_info.compiler_working_dir_ )
-
-    # NOTE: This is just for YouCompleteMe; it's highly likely that your project
-    # does NOT need to remove the stdlib flag. DO NOT USE THIS IN YOUR
-    # ycm_extra_conf IF YOU'RE NOT 100% SURE YOU NEED IT.
-    try:
-      final_flags.remove( '-stdlib=libc++' )
-    except ValueError:
-      pass
-  else:
-    relative_to = DirectoryOfThisScript()
-    final_flags = MakeRelativePathsInFlagsAbsolute( flags, relative_to )
-
-  return {
-    'flags': final_flags,
-    'do_cache': True
-  }
+    data = kwargs['client_data']
+    filetype = data['&filetype']
+    if filetype == 'c':
+        flags += ['-std=gnu11']
+    elif filetype == 'cpp':
+        flags += ['-std=c++11']
+        flags += ['stdlib=libc++']
+    return {
+            'flags': flags,
+            'do_cache': True
+            }
