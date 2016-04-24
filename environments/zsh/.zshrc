@@ -21,6 +21,8 @@ alias tree="tree -C"
 
 alias gits="git status"
 
+alias svndiff="svn diff | colordiff | less"
+
 sh ~/dotfiles/scripts/base-16.default.dark.mod.sh
 
 bindkey "\e[1~" beginning-of-line

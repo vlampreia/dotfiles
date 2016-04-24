@@ -90,6 +90,9 @@ let indent_guides_color_change_percent=3
 filetype on
 filetype plugin on
 
+" set .tex default ft to latex
+let g:tex_flavor = "latex"
+
 " show trailing whitespace
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
