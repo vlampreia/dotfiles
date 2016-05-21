@@ -14,6 +14,8 @@ Plug 'moll/vim-node'
 Plug 'aklt/plantuml-syntax'
 Plug 'mbbill/undotree'
 Plug 'junegunn/goyo.vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'tommcdo/vim-lion'
 
 call plug#end()
 call ctrlp_bdelete#init()
@@ -106,10 +108,6 @@ let g:airline_exclude_preview = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
-
-"tab shift
-vmap <Tab> >gv
-vmap <S-Tab> <gv
 
 " close current buffer with ctrl+c
 noremap <C-c> :bp\|bd #<CR>

@@ -68,6 +68,7 @@ bindsym $mod+Shift+s sticky toggle
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run -fn DejaVu-8:normal -dim 0.65 -nb "#34322E"
 bindsym $mod+d exec zsh -c 'rofi -show run -bw 3 -bg "$background" -fg "$foreground" -bc "$blue" -hlbg "$blue" -hlfg "$background" -font "DejaVu Sans Mono 8" -separator-style "none" -hide-scrollbar -columns 3'
+bindsym $mod+d exec zsh -c 'rofi -show run -bw 3 -bg "$background" -fg "$foreground" -bc "$blue" -hlbg "$blue" -hlfg "$background" -font "DejaVu Sans Mono 8" -separator-style "none" -hide-scrollbar -columns 3'
 bindsym $mod+shift+d zhs -c 'exec rofi -show window -bw 3 -bg "$background" -fg "$foreground" -bc "$blue" -hlbg "$blue" -hlfg "$background" -font "DejaVu Sans Mono 8" -separator-style "none" -hide-scrollbar -columns 1'
 
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
