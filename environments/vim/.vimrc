@@ -16,6 +16,7 @@ Plug 'mbbill/undotree'
 Plug 'junegunn/goyo.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'tommcdo/vim-lion'
+Plug 'ledger/vim-ledger'
 
 call plug#end()
 call ctrlp_bdelete#init()
