@@ -81,6 +81,8 @@ set fo+=ro
 set fo-=t
 set tw=80
 
+au BufRead /tmp/mutt-* set tw=72
+
 " indentation
 filetype plugin indent on
 set softtabstop=2

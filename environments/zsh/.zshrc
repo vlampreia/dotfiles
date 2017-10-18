@@ -15,8 +15,10 @@ antigen apply
 DEFAULT_USER=victor
 
 export EDITOR=vim
+export FZF_DEFAULT_COMMAND='ag -g ""'
 
-alias l="ls -lah"
+alias l="ls -lh"
+alias ll="ls -lah"
 alias tree="tree -C"
 
 alias gits="git status"
@@ -57,3 +59,5 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 export KEYTIMEOUT=1
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

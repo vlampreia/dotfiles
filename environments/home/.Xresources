@@ -1,7 +1,7 @@
 URxvt.perl-ext-common: font-size
 URxvt.keysym.Mod4-Home: font-size:increase
 URxvt.keysym.Mod4-End: font-size:decrease
-URxvt.font-size.step: 2
+URxvt.font-size.step: 1
 
 URxvt.background: #222222
 URxvt.font: xft:DejaVu\ Sans\ Mono\ for\ Powerline:size=8
@@ -41,3 +41,6 @@ rofi.kb-row-left: Control+h
 rofi.kb-row-right: Control+l
 rofi.kb-row-down: Control+j
 rofi.kb-row-up: Control+k
+
+
+Xcursor.size: 16
