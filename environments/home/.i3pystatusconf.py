@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import subprocess
 
 from i3pystatus import Status
@@ -15,7 +17,7 @@ status.register("battery",
         color="#ffff00",
         status={
             "DPL": "-",
-            "DIS": "↓",
+            "DIS": u'↓',
             "CHR": "↑",
             "FULL": "-",
         },)

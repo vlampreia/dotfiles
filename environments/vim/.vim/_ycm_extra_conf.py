@@ -41,7 +41,9 @@ flags = [
     '-I',
     './include',
     '-I',
-    './external'
+    './external',
+    '-I',
+    '/usr/local/include'
     ]
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
