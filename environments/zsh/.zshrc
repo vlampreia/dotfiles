@@ -17,6 +17,7 @@ DEFAULT_USER=victor
 export EDITOR=vim
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
+alias ls="ls --color"
 alias l="ls -lh"
 alias ll="ls -lah"
 alias tree="tree -C"
@@ -26,8 +27,6 @@ alias gits="git status"
 alias svndiff="svn diff | colordiff | less"
 
 sh ~/dotfiles/scripts/base-16.default.dark.mod.sh
-
-
 
 bindkey -v
 

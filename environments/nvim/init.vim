@@ -11,8 +11,8 @@ call dein#add('Shougo/deoplete.nvim')
 "call dein#add('zchee/deoplete-clang')
 "call dein#add('tweekmonster/deoplete-clang2')
 call dein#add('Rip-Rip/clang_complete')
-call dein#add('zchee/deoplete-jedi')
-call dein#add('artur-shaik/vim-javacomplete2')
+"call dein#add('zchee/deoplete-jedi')
+"call dein#add('artur-shaik/vim-javacomplete2')
 call dein#add('Shougo/neoinclude.vim')
 call dein#add('junegunn/fzf')
 call dein#add('junegunn/fzf.vim')
@@ -20,6 +20,16 @@ call dein#add('itchyny/lightline.vim')
 call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('Raimondi/delimitMate')
 call dein#add('tikhomirov/vim-glsl')
+call dein#add('junegunn/goyo.vim')
+call dein#add('junegunn/limelight.vim')
+"call dein#add('leafgarland/typescript-vim')
+"call dein#add('HerringtonDarkholme/yats.vim')
+
+call dein#add('othree/html5.vim')
+"call dein#add('othree/yajs.vim')
+call dein#add('othree/javascript-libraries-syntax.vim')
+call dein#add('jelera/vim-javascript-syntax')
+call dein#add('reedes/vim-colors-pencil')
 
 call dein#end()
 
@@ -64,7 +74,7 @@ call deoplete#custom#set('_', 'matchers', ['matcher_fuzzy'])
 call deoplete#custom#set('_', 'sorters', ['sorter_word'])
 
 let g:molokai_original = 1
-colorscheme molokai
+colorscheme pencil
 set background=dark
 set colorcolumn=81
 
@@ -111,3 +121,20 @@ hi IndentGuidesEven ctermbg=NONE
 :hi ErrorMsg ctermbg=0
 :hi WildMenu ctermbg=0
 :hi IncSearch cterm=NONE ctermfg=208 ctermbg=240
+
+let g:limelight_conceal_ctermfg = 245
+autocmd! User GoyoEnter nested call <SID>SetDistractionFree()
+autocmd! User GoyoLeave nested call <SID>UnsetDistractionFree()
+
+function! s:SetDistractionFree()
+    Limelight
+    IndentGuidesDisable
+endfunction
+
+function! s:UnsetDistractionFree()
+    Limelight!
+    IndentGuidesEnable
+endfunction
+
+au BufRead,BufNewFile *.vue set ft=html
+au BufRead,BufNewFile *.ts set ft=javascript
