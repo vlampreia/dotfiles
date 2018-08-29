@@ -53,3 +53,27 @@ XTerm*faceName: DejaVu\ Sans\ Mono\ for\ Powerline:size=8
 
 
 Xcursor.size: 16
+
+
+!set $background       #1d2021
+!set $foreground       #c5c8c6
+!set $black    #1d2021
+!set $darkgrey #a5b6bc
+!set $darkred  #a54242
+!set $red      #cc6666
+!set $darkgreen        #99cc99
+!set $green    #aae3aa
+!set $darkyellow       #de935f
+!set $yellow   #f0c674
+!set $darkblue #5f819d
+!set $blue     #81a2be
+!set $darkmagenta      #85678f
+!set $magenta  #b294bb
+!set $darkcyan #5e8d87
+!set $cyan     #8abeb7
+!set $lightgrey        #5a6066
+!set $white    #c5c8c6
+! bg, fg, bgalt, hlbg, hlfg
+rofi.color-normal: #1d2021, #c5c8c6, #1d2021, #de935f, #1d2021
+! bg, border, separator
+rofi.color-window: #1d2021, #1d2021, #1d2021
