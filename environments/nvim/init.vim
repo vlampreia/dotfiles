@@ -20,20 +20,22 @@ call dein#add('reedes/vim-colors-pencil')
 call dein#add('martinda/Jenkinsfile-vim-syntax')
 call dein#add('othree/html5.vim')
 call dein#add('jelera/vim-javascript-syntax')
-call dein#add('autozimu/LanguageClient-neovim', {
-    \ 'rev': 'next',
-    \ 'build': 'bash install.sh',
-    \ })
+call dein#add('editorconfig/editorconfig-vim')
+call dein#add('modille/groovy.vim')
+" call dein#add('autozimu/LanguageClient-neovim', {
+"     \ 'rev': 'next',
+"     \ 'build': 'bash install.sh',
+"     \ })
 
 call dein#end()
 
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['javascript-typescript-stdio']
-    \ }
-
-set completefunc=LanguageClient#complete
+"" let g:LanguageClient_autoStart = 1
+"" let g:LanguageClient_serverCommands = {
+""     \ 'javascript': ['javascript-typescript-stdio'],
+""     \ 'javascript.jsx': ['javascript-typescript-stdio']
+""     \ }
+"" 
+"" set completefunc=LanguageClient#complete
 
 filetype plugin indent on
 
@@ -116,7 +118,7 @@ exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
 
 "noremap <C-c> :bp\|bd #<CR>
-noremap <C-c> :bd<CR>
+"noremap <C-c> :bd<CR>
 
 let delimitMate_expand_cr=1
 
@@ -140,3 +142,5 @@ set ignorecase
 set smartcase
 
 set autoread
+
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
