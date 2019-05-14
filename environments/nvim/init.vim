@@ -58,7 +58,7 @@ set wildignore+=*.o,*.so,*.swp,*.zip,*.class,*.jar,node_modules
 
 set rtp+=~/.config/nvim/dein/repos/github.com/junegunn/fzf
 nmap <c-p> :FZF --inline-info<CR>
-let g:fzf_colors = { 'hl' : ['fg', 'String'], 'hl+' : [ 'fg', 'String' ]}
+let g:fzf_colors = { 'hl' : ['fg', 'String', 'bg', 'Normal'], 'hl+' : [ 'fg', 'String' ]}
 
 let g:clang_library_path='/usr/lib/'
 let g:clang_complete_auto = 0
