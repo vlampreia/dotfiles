@@ -37,8 +37,6 @@ call dein#end()
 "" 
 "" set completefunc=LanguageClient#complete
 
-filetype plugin indent on
-
 if dein#check_install()
   call dein#install()
 endif
@@ -46,6 +44,7 @@ endif
 
 filetype plugin indent on
 syntax enable
+"syntax off
 
 set re=1
 
@@ -122,7 +121,7 @@ set list
 
 let delimitMate_expand_cr=1
 
-let indent_guides_enable_on_vim_startup=1
+let indent_guides_enable_on_vim_startup=0
 hi IndentGuidesOdd ctermbg=black
 hi IndentGuidesEven ctermbg=NONE
 
@@ -142,5 +141,7 @@ set ignorecase
 set smartcase
 
 set autoread
+
+set fillchars+=vert:\ 
 
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
