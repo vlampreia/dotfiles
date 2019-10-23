@@ -1,16 +1,16 @@
-source ~/dotfiles/environments/zsh/antigen/antigen.zsh
+# source ~/dotfiles/environments/zsh/antigen/antigen.zsh
 
-antigen use oh-my-zsh
+# antigen use oh-my-zsh
 
-antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
-antigen bundle command-not-found
-
-antigen theme agnoster
-
-antigen apply
+# antigen bundle git
+# antigen bundle heroku
+# antigen bundle pip
+# antigen bundle lein
+# antigen bundle command-not-found
+# 
+# antigen theme agnoster
+# 
+# antigen apply
 
 DEFAULT_USER=victor
 
@@ -26,7 +26,11 @@ alias gits="git status"
 
 alias svndiff="svn diff | colordiff | less"
 
+alias less="less -S"
+
 sh ~/dotfiles/scripts/base-16.default.dark.mod.sh
+
+export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 bindkey -v
 
@@ -55,8 +59,54 @@ function zle-line-init zle-keymap-select {
   zle reset-prompt
 }
 
+. /usr/share/git/completion/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWSTASHSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+export GIT_PS1_SHOWSHOWUPSTREAM=true
+
+setopt PROMPT_SUBST
+function prompt {
+    echo "$(whoami):$(dirs)$(__git_ps1)"
+}
+
+export PS1='%0{$(tput sgr0)$(tput bold)$(tput setaf 3)%}> $(prompt) \$ %0{$(tput sgr0)%}'
+
 zle -N zle-line-init
 zle -N zle-keymap-select
 export KEYTIMEOUT=1
 
+eval $(ssh-agent) > /dev/null
+
+export HISTFILE=~/.zsh_history
+export SAVEHIST=9999
+export HISTSIZE=9999
+
+# zstyle ':completion:*' matcher-list 'm:[a-z]=[A-Z]'
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/nvm/init-nvm.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/victor/google-cloud-sdk/path.zsh.inc' ]; then . '/home/victor/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/victor/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/victor/google-cloud-sdk/completion.zsh.inc'; fi

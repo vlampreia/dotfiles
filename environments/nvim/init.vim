@@ -22,10 +22,13 @@ call dein#add('othree/html5.vim')
 call dein#add('jelera/vim-javascript-syntax')
 call dein#add('editorconfig/editorconfig-vim')
 call dein#add('modille/groovy.vim')
+call dein#add('leafgarland/typescript-vim')
 " call dein#add('autozimu/LanguageClient-neovim', {
 "     \ 'rev': 'next',
 "     \ 'build': 'bash install.sh',
 "     \ })
+" call dein#add('reedes/vim-colors-pencil')
+call dein#add('sirtaj/vim-openscad')
 
 call dein#end()
 

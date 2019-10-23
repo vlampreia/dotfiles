@@ -20,7 +20,8 @@ Xft.autohint: false
 !Xft.hintstyle: hintslight
 !Xft.lcdfilter: lcddefault
 URxvt.depth: 32
-URxvt.foreground: #E5E8E6
+!URxvt.foreground: #E5E8E6
+URxvt.foreground: #FEFEFE
 URxvt.keysym.Control-Down: \033[1;5B
 URxvt.keysym.Control-Left: \033[1;5D
 URxvt.keysym.Control-Right: \033[1;5C
@@ -31,7 +32,7 @@ URxvt.scrollBar: false
 URxvt.saveLines: 6000
 
 XTerm*Background: #222222
-XTerm*Foreground: #EEEEEE
+XTerm*Foreground: #FEFEFE
 XTerm*faceName: DejaVu\ Sans\ Mono\ for\ Powerline:size=8
 
 !urxvt.color0: #3B444F
@@ -48,6 +49,7 @@ XTerm*faceName: DejaVu\ Sans\ Mono\ for\ Powerline:size=8
 !urxvt.color5: #75434C
 !urxvt.color6: #767D75
 !urxvt.color7: #999999
+urxvt.color7: #FEFEFE
 !urxvt.color8: #4A585A
 !urxvt.color9: #EF545F
 

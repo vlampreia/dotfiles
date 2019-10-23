@@ -227,14 +227,14 @@ if &t_Co > 255
    hi WildMenu        ctermfg=7 ctermbg=16
 
    " hi Normal          ctermfg=7 ctermbg=235
-   hi Normal          ctermfg=7 ctermbg=8
+   hi Normal          ctermfg=7 ctermbg=0
    " hi Normal          ctermfg=7 ctermbg=234
    hi Comment         ctermfg=1
    hi CursorLine                  ctermbg=234   cterm=none
    hi CursorColumn                ctermbg=234
    hi ColorColumn                 ctermbg=236
-   hi LineNr          ctermfg=7 ctermbg=8
-   hi NonText         ctermfg=7 ctermbg=8
+   hi LineNr          ctermfg=7 ctermbg=0
+   hi NonText         ctermfg=7 ctermbg=0
 end " }}}
 
 highlight Comment cterm=bold
