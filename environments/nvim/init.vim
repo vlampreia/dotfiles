@@ -124,6 +124,8 @@ set list
 "noremap <C-c> :bd<CR>
 
 let delimitMate_expand_cr=1
+let delimitMate_balance_matchpairs=1
+" let loaded_delimitMate = 1
 
 let indent_guides_enable_on_vim_startup=0
 hi IndentGuidesOdd ctermbg=black

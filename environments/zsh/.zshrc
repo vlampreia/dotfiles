@@ -15,7 +15,8 @@
 DEFAULT_USER=victor
 
 export EDITOR=vim
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g ""'
+export LESS='-XFSR'
 
 alias ls="ls --color"
 alias l="ls -lh"
@@ -110,3 +111,5 @@ if [ -f '/home/victor/google-cloud-sdk/path.zsh.inc' ]; then . '/home/victor/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/victor/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/victor/google-cloud-sdk/completion.zsh.inc'; fi
+
+alias gblog='gcloud builds log --stream $(gcloud builds list --uri --limit 1 --filter="sourceProvenance.resolvedRepoSource.commitSha=$(git rev-parse HEAD | tr -d '\n')")'
