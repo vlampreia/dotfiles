@@ -14,6 +14,7 @@
 
 DEFAULT_USER=victor
 
+export TERM="rxvt-unicode-256color"
 export EDITOR=vim
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g ""'
 export LESS='-XFSR'
@@ -29,9 +30,11 @@ alias svndiff="svn diff | colordiff | less"
 
 alias less="less -S"
 
+alias copy="xclip -sel clip"
+
 sh ~/dotfiles/scripts/base-16.default.dark.mod.sh
 
-export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+export WORDCHARS='*?_-[]~&;!#$%^(){}<>'
 
 bindkey -v
 
@@ -104,7 +107,40 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
+
+# lazyload nvm
+# all props goes to http://broken-by.me/lazy-load-nvm/
+# grabbed from reddit @ https://www.reddit.com/r/node/comments/4tg5jg/lazy_load_nvm_for_faster_shell_start/
+
+lazynvm() {
+  unset -f nvm node npm npx
+  export NVM_DIR=~/.nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+  if [ -f "$NVM_DIR/bash_completion" ]; then
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+  fi
+}
+
+nvm() {
+  lazynvm 
+  nvm $@
+}
+ 
+node() {
+  lazynvm
+  node $@
+}
+ 
+npm() {
+  lazynvm
+  npm $@
+}
+
+npx() {
+  lazynvm
+  npx $@
+}
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/victor/google-cloud-sdk/path.zsh.inc' ]; then . '/home/victor/google-cloud-sdk/path.zsh.inc'; fi

@@ -23,6 +23,7 @@ call dein#add('jelera/vim-javascript-syntax')
 call dein#add('editorconfig/editorconfig-vim')
 call dein#add('modille/groovy.vim')
 call dein#add('leafgarland/typescript-vim')
+call dein#add('aklt/plantuml-syntax')
 " call dein#add('autozimu/LanguageClient-neovim', {
 "     \ 'rev': 'next',
 "     \ 'build': 'bash install.sh',
@@ -140,6 +141,7 @@ hi IndentGuidesEven ctermbg=NONE
 
 au BufNewFile,BufRead *.vue set filetype=javascript
 au BufNewFile,BufRead jenkinsfile set filetype=groovy
+au BufNewFile,BufRead *.devlog.txt set filetype=devlog
 
 noremap <C-6> <C-^>
 
@@ -151,3 +153,6 @@ set autoread
 set fillchars+=vert:\ 
 
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+" use system clipboard as default
+set clipboard=unnamedplus
